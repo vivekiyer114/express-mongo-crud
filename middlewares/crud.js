@@ -1,6 +1,5 @@
 
 function callback(err,response,res){
-    console.log(err,response,'hey')
     if (err){
         res.status(400).send({message:err.message})
     }else{
@@ -31,9 +30,7 @@ module.exports = Model => {
     
     router.get('/:id',findOne);
 
-    router.post('/',(req,res) => {
-        create(req,res);
-    });
+    router.post('/',(req,res) => create);
     
     router.put('/:id',update)
 

@@ -2,12 +2,12 @@ const ROLES_MAP_PERMISSIONS = {
     'User':{
 
     },
-    'Artist':{
+    'Admin':{
 
     }
 };
 
-const PUBLIC_ROUTES = ['GET /artist'];
+const PUBLIC_ROUTES = ['GET /country'];
 module.exports = (req,res,next) => {
     let token = req.headers['token'];
 
@@ -19,4 +19,4 @@ module.exports = (req,res,next) => {
     }
 }
 
-const isPublicRoute = route => PUBLIC_ROUTES.indexOf(route) >= 0;
+const isPublicRoute = route => PUBLIC_ROUTES.includes(route);
